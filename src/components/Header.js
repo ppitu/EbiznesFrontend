@@ -14,7 +14,7 @@ const Header = () => {
         else {
             log_in(myCookie)
         }
-    }, [log_in]);
+    }, [log_in, logged]);
 
     const deleteCookie = () => {
         document.cookie.split(";").forEach(function(c) {
