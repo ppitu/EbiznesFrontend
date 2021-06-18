@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_586e9933a6494822b7c4f7e7cbd5a586 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_0d46e31887364104b8bde1619289df7e }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_8d85d84ddfcb4a63915d50cbaa67dcf2 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_40dac8770e2541a9b7ca9662c8336fe6 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_586e9933a6494822b7c4f7e7cbd5a586 }}/ppitu:${{ github.sha }}
+        tags: index.docker.io/ppitu/e-biznes:latest #${{ secrets.AzureAppService_ContainerUsername_8d85d84ddfcb4a63915d50cbaa67dcf2 }}/ppitu/e-biznes:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'EbiznesF'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_24500ae5d2ad4b83ab086333d5406f23 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_586e9933a6494822b7c4f7e7cbd5a586 }}/ppitu:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9a7e7acb10db4daa98afdfdff5a92605 }}
+        images: 'index.docker.io/ppitu/e-biznes:latest' #${{ secrets.AzureAppService_ContainerUsername_8d85d84ddfcb4a63915d50cbaa67dcf2 }}/ppitu/e-biznes:${{ github.sha }}'
