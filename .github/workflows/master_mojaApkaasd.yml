@@ -22,8 +22,8 @@ jobs:
 
     - name: npm install, build, and test
       run: |
-        npm install
-        npm run build --if-present 
+        CI=false npm install
+        CI=false npm run build --if-present
       # npm run test --if-present --passWithNoTests
 
    # - name: Upload artifact for deployment job
@@ -45,7 +45,7 @@ jobs:
     #  with:
     #    name: node-app
 
-    - name: 'Deploy to Azure Web App'
+    - name: Run Azure webapp deploy action using publish profile credentials
    #   id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
