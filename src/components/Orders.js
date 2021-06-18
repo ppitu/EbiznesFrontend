@@ -10,7 +10,7 @@ function Orders(props) {
                 setOrders( res.data
                 )
 
-            })}, []);
+            })}, [props.id]);
 
     return(
         <div className="orders">

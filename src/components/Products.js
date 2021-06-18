@@ -1,5 +1,4 @@
-import React, {Component, useEffect, useState} from "react";
-import axios from 'axios';
+import React, {useEffect, useState} from "react";
 import {getProducts} from "../RestRequester";
 import Categories from "./Categories";
 

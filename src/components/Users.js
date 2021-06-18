@@ -1,6 +1,5 @@
-import React, {Component, useEffect, useState} from "react";
-import axios from "axios";
-import {getCategories, getUsers} from "../RestRequester";
+import React, {useEffect, useState} from "react";
+import {getUsers} from "../RestRequester";
 import {Link, Route, BrowserRouter as Router,} from "react-router-dom";
 import Details from "./Details";
 

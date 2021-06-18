@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {getCreditCard, getProducts} from "../RestRequester";
+import {getCreditCard} from "../RestRequester";
 
 function CreditCards(props) {
     const [creditCards, setCreditCards] = useState([]);
