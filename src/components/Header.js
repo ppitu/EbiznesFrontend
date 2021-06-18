@@ -1,7 +1,6 @@
 import {LoggedContext} from "../contexts/LoggedContext";
 import React, {useEffect, useContext} from "react";
 import {Link} from "react-router-dom";
-import Cookies from 'js-cookie';
 
 const Header = () => {
     const {logged, log_out, log_in} = useContext(LoggedContext);
